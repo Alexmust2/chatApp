@@ -1,21 +1,18 @@
 const express = require('express');
-const { Sequelize } = require('sequelize');
 const WebSocket = require('ws');
 const dotenv = require('dotenv');
+const sequelize = require('./config/database');
+const chatRoutes = require('./routes/chatRoutes');
 
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: 'mysql'
-});
+app.use(express.json());
+app.use('/api', chatRoutes);
 
-sequelize.authenticate()
-  .then(() => console.log('Database connected...'))
-  .catch(err => console.log('Error: ' + err));
+sequelize.sync();
 
 const server = app.listen(port, () => console.log(`Server started on port ${port}`));
 

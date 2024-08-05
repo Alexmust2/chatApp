@@ -3,14 +3,17 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-      "dev": "nodemon index.js",
-      "prod": "node index.js"
+        "dev": "nodemon index.js",
+        "prod": "node index.js"
     },
     "dependencies": {
-      "express": "^4.17.1",
-      "mysql2": "^2.2.5",
-      "sequelize": "^6.6.2",
-      "ws": "^7.4.6",
-      "dotenv": "^10.0.0"
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.6.2",
+        "ws": "^7.4.6"
+    },
+    "devDependencies": {
+        "vue-cli-plugin-pinia": "~0.2.4"
     }
-  }
+}
