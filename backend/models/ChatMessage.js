@@ -3,7 +3,7 @@ const sequelize = require('../config/database');
 const User = require('./User');
 const Chat = require('./Chat');
 
-const ChatMessage = sequelize.define('ChatMessage', {
+const ChatMessage = sequelize.define('chatmessage', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

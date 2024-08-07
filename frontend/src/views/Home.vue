@@ -6,14 +6,19 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'pinia';
 import { useChatStore } from '../stores/chatStore';
 
 export default {
-  setup() {
-    const chatStore = useChatStore();
-    return {
-      chats: chatStore.chats,
-    };
+  name: 'Home',
+  computed: {
+    ...mapState(useChatStore, ['chats'])
   },
+  methods: {
+    ...mapActions(useChatStore, ['getChats'])
+  },
+  created() {
+    this.getChats();
+  }
 };
 </script>

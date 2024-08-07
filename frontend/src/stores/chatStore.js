@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { defineStore } from 'pinia';
 
 export const useChatStore = defineStore('chat', {
@@ -8,5 +9,10 @@ export const useChatStore = defineStore('chat', {
     addChat(chat) {
       this.chats.push(chat);
     },
+    getChats() {
+      axios.get('http://localhost:3000/api/chat').then((response) => {
+        this.chats = response.data;
+      })
+    }
   },
 });

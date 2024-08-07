@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Chat = sequelize.define('Chat', {
+const Chat = sequelize.define('сhat', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

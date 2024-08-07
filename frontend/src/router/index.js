@@ -4,7 +4,6 @@ import ChatView from '../views/ChatView.vue';
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About },
   { path: '/chat/:id', component: ChatView },
 ];
 

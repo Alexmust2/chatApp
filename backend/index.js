@@ -3,11 +3,14 @@ const WebSocket = require('ws');
 const dotenv = require('dotenv');
 const sequelize = require('./config/database');
 const chatRoutes = require('./routes/chatRoutes');
+const cors = require('cors'); // Add this line
 
 dotenv.config();
 
 const app = express();
 const port = 3000;
+
+app.use(cors()); // Add this line
 
 app.use(express.json());
 app.use('/api', chatRoutes);
